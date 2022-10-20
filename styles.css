@@ -1,0 +1,66 @@
+html{
+    background-image: url("/background.png");
+    font-family: 'Press Start 2P', cursive;
+}
+
+#Buscar{
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: white;
+}
+
+.poke-datos{
+    position: relative;
+    height: fit-content;
+    max-width: 300px;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+}
+
+.poke-datos::before {
+    content: '';
+    background: radial-gradient(black 33%, transparent 33%);
+    background-size: 3px 3px;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: -1;
+}
+
+.img-container{
+    position: relative;
+    width: 100px;
+    margin: 10px auto;
+}
+
+.poke-stats div{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.poke-type div{
+    padding: 6px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid black;
+    color: white;
+    width: 50%;
+}
+
+.poke-img{
+    border-radius: 50%;
+    width: 100%;
+}

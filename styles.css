@@ -3,11 +3,23 @@ html{
     font-family: 'Press Start 2P', cursive;
 }
 
-#Buscar{
+#Buscar p{
+    cursor: pointer;
     width: 200px;
     margin: 20px auto;
     text-align: center;
-    background-color: white;
+    background-color: #FF3F3F;
+    color: white;
+    padding: 5px;
+    border-radius: 5%;
+    border: solid 2px white;
+}
+
+#Buscar p:hover{
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #fc5d5d;
 }
 
 .poke-datos{
@@ -63,4 +75,5 @@ html{
 .poke-img{
     border-radius: 50%;
     width: 100%;
+    padding: 10px;
 }

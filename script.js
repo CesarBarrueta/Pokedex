@@ -27,13 +27,22 @@ const typeColors = {
     default: '#FFFFFF',
 };
 
-function buscarPokemon(event){
-    event.preventDefault();
+document.body.onload = function() {
+    recargarPokemon();
+  }
+
+function buscarPokemon(){
+    
     const value = numRandom();
     console.log("https://pokeapi.co/api/v2/pokemon/"+value+"/")
     fetch('https://pokeapi.co/api/v2/pokemon/'+value+'/')
         .then(data => data.json())
         .then(response => analizarPokeDatos(response))
+}
+
+function recargarPokemon(){
+    setInterval('buscarPokemon()', 30000);
+
 }
 
 const analizarPokeDatos = data =>{
@@ -83,6 +92,10 @@ function setColorFondo(types){
     }
 
     pokeImg.style.background = "radial-gradient("+color2+","+color1+")";
+
+    //Pendiente utilizar de mejor manera el  color 2
+
+    pokeImg.style.border = "3px solid "+color2+"!important;";
     pokeImg.style.backgroundSize = "5 px 5 px";
 }
 

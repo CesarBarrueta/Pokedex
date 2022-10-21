@@ -1,6 +1,6 @@
 /*
 Se crean variables para obtener los objetos del DOM y ser capaces de modificarlos de manera
-rapida posteriormente
+rapida posteriormente.
 */
 const pokeDatos = document.querySelector('[datos-pokemon]');
 const pokeName = document.querySelector('[datos-pokemon-nombre]');
@@ -11,7 +11,7 @@ const pokeStats = document.querySelector('[datos-pokemon-estadisticas]');
 
 /*
 Se asignan colores específicos para los tipos de pokemones de la API para poder
-representarlos de mejor manera en la pokedex
+representarlos de mejor manera en la pokedex.
 */
 
 const typeColors = {
@@ -37,7 +37,7 @@ const typeColors = {
 };
 
 /*
-Se utiliza el evento onload para ejecutar recargarPokemon() al terminar de cargar la página
+Se utiliza el evento onload para ejecutar recargarPokemon() al terminar de cargar la página.
 */
 
 document.body.onload = function() {
@@ -46,8 +46,8 @@ document.body.onload = function() {
 
  /*
  recargarPokemon()
-    • Ejecuta la funcion buscarPokemon() cada 30 segundos.
-    • Se busca un pokemon sin necesidad de presionar el botón
+    • Ejecuta la función buscarPokemon() cada 30 segundos.
+    • Se busca un pokemón sin necesidad de presionar el botón.
  */ 
 
   function recargarPokemon(){
@@ -57,13 +57,12 @@ document.body.onload = function() {
 
 /*
     buscarPokemon()
-    • Utiliza un numero random y consulta un pokemon de la API según el numero obtenido.
+    • Utiliza un número random y consulta un pokemon de la API según el número obtenido.
     • Retorna una promesa de un archivo JSON con los datos del pokemon. 
 */  
 
 function buscarPokemon(){
     const value = numRandom();
-    //console.log("https://pokeapi.co/api/v2/pokemon/"+value+"/")
     fetch('https://pokeapi.co/api/v2/pokemon/'+value+'/')
         .then(data => data.json())
         .then(response => analizarPokeDatos(response))
@@ -72,7 +71,7 @@ function buscarPokemon(){
 /*
     analizarPokeDatos
     • Recibe el JSON con los datos del pokemon 
-    • Obtiene las partes que se requieren para la pokedex (imagen, estatísticas, tipos)
+    • Obtiene las partes que se requieren para la pokedex (imagen, estadísticas, tipos)
 */
 
 const analizarPokeDatos = data =>{
@@ -131,7 +130,7 @@ function analizarPokeTipos(types){
     setColorFondo()
     • Recibe el arreglo de tipos
     • Le agrega un color de fondo a la imagen de la tarjeta
-    • Segun el pokemon se agregan 1 o 2 colores al fondo
+    • Según el pokemon se agregan 1 o 2 colores al fondo
 */
 
 function setColorFondo(types){
@@ -140,7 +139,7 @@ function setColorFondo(types){
     try{
     const color2 = typeColors[types[1].type.name];
     }catch(e){
-       // console.log("Error de color")
+
     }
     pokeImg.style.background = "radial-gradient("+color2+","+color1+")";
     pokeImg.style.backgroundSize = "5 px 5 px";
